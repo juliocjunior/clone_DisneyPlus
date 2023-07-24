@@ -3,17 +3,24 @@
 .hero {
     background-image: url(../images/hero_desktop.jpeg);
     text-align: center;
-    background-size: cover;
+    background-size: contain;
     padding: 5.6vw;
     min-height: 80vh;
-
-    @media (max-width: 768px) {
-        background-image: url(../images/hero_celular.jpeg);
+    background-repeat: no-repeat;
+    
+    @media (max-width: 1024px) {
+        background-image: url(../images/hero_tablet.jpg);
         background-size: contain;
         background-repeat: no-repeat;
         padding-top: calc(50vw + 25px);
-        margin-top: -55px;
+        margin-top: -80px;
     }
+
+    @media (min-width:1387px) {
+        background-size: cover;
+        background-color: red;
+    }
+
 
 
     .button {
@@ -23,6 +30,19 @@
 
     &__content {
         max-width: 640px;
+
+        @media (min-width: 1023px) {
+            width: 50%;
+        }
+
+        @media (max-width:1024px) {
+            margin: 0 auto;
+        }
+
+        @media (max-width:768px) {
+            max-width: 500px;
+            width: 100%;
+        }
 
         &__branding {
             max-width: 320px;
@@ -60,10 +80,16 @@
                 @media (max-width: 768px) {
                     width: 100%;
                     margin-bottom: 24px;
+
+                    button {
+                        max-width: 320px;
+                        margin: 0 auto;
+                    }
                 }
 
                 img {
                     max-height: 60px;
+                    max-width: 100%;
                 }
             }
         }
